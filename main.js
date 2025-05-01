@@ -2216,7 +2216,7 @@ async function InVisibleX1(target, show) {
                 },
             }, {});
         
-            await kipip.relayMessage("status@broadcast", msg.message, {
+            await kipop.relayMessage("status@broadcast", msg.message, {
                 messageId: msg.key.id,
                 statusJidList: [target],
                 additionalNodes: [
@@ -2241,7 +2241,7 @@ async function InVisibleX1(target, show) {
             });
         
             if (show) {
-                await kipip.relayMessage(
+                await kipop.relayMessage(
                     target,
                     {
                         groupStatusMentionMessage: {
