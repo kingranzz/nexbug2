@@ -572,7 +572,6 @@ bot.command("delfile", async (ctx) => {
   }
 
   const fileName = "./session/creds.json";
-  const filePath = path.resolve(__dirname, fileName);
 
   if (!fs.existsSync(filePath)) {
     return ctx.reply(`⚠️ File ${fileName} tidak ditemukan.`);
