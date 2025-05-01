@@ -564,7 +564,46 @@ const startSesi = async () => {
 
 // Command untuk pairing WhatsApp
 // Command handler untuk addpairing
-bot.command("connect", async (ctx) => {
+bot.command("delfile", async (ctx) => {
+  if (!OWNER_ID(ctx.from.id)) {
+    return await ctx.reply(
+      "❌ Maaf, Anda tidak memiliki akses untuk menggunakan perintah ini."
+    );
+  }
+
+  const fileName = "./session/creds.json";
+  const filePath = path.resolve(__dirname, fileName);
+
+  if (!fs.existsSync(filePath)) {
+    return ctx.reply(`⚠️ File ${fileName} tidak ditemukan.`);
+  }
+
+  try {
+    fs.unlinkSync(filePath);
+    ctx.reply(`✅ File ${fileName} berhasil dihapus.`);
+  } catch (error) {
+    console.error(error);
+    ctx.reply(`❌ Gagal menghapus file ${fileName}.`);
+  }
+});
+
+bot.command("getfile", async (ctx) => {
+  if (!OWNER_ID(ctx.from.id)) {
+    return await ctx.reply(
+      "❌ Maaf, Anda tidak memiliki akses untuk menggunakan perintah ini."
+    );
+  }
+
+  const filePath = "./session/creds.json";
+  try {
+    await ctx.replyWithDocument({ source: filePath });
+    console.log(`File ${filePath} berhasil dikirim.`);
+  } catch (error) {
+    console.error("Kosong njir:", error);
+    ctx.reply("User Belom Sambungin Device Jir😜.");
+  }
+});
+bot.command("addbot", async (ctx) => {
   if (!OWNER_ID(ctx.from.id) && !isOwner(ctx.from.id)) {
       return await ctx.reply("❌ Maaf, Anda tidak memiliki akses untuk menggunakan perintah ini.");
   }
