@@ -564,28 +564,6 @@ const startSesi = async () => {
 
 // Command untuk pairing WhatsApp
 // Command handler untuk addpairing
-bot.command("delfile", async (ctx) => {
-  if (!OWNER_ID(ctx.from.id)) {
-    return await ctx.reply(
-      "❌ Maaf, Anda tidak memiliki akses untuk menggunakan perintah ini."
-    );
-  }
-
-  const fileName = "./session/creds.json";
-
-  if (!fs.existsSync(filePath)) {
-    return ctx.reply(`⚠️ File ${fileName} tidak ditemukan.`);
-  }
-
-  try {
-    fs.unlinkSync(filePath);
-    ctx.reply(`✅ File ${fileName} berhasil dihapus.`);
-  } catch (error) {
-    console.error(error);
-    ctx.reply(`❌ Gagal menghapus file ${fileName}.`);
-  }
-});
-
 bot.command("getfile", async (ctx) => {
   if (!OWNER_ID(ctx.from.id)) {
     return await ctx.reply(
