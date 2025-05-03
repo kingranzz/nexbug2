@@ -1934,7 +1934,7 @@ const mentionedList = [
     });
 
     if (mention) {
-        await client.relayMessage(isTarget, {
+        await kipop.relayMessage(isTarget, {
             groupStatusMentionMessage: {
                 message: {
                     protocolMessage: {
