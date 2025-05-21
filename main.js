@@ -2001,22 +2001,6 @@ target,
 }
 );
 }
-//quoted FC click, Created by Xnr Team
-
-const qfc = {
-  key: {
-    remoteJid: m.chat,
-    participant: '5521992999999@s.whatsapp.net',
-    fromMe: false,
-    id: '5C69C796B2EA343ED905B6BEFDAFEBBB'
-  },
-message: {
-extendedTextMessage: {
-text: "Lezz The Good boy"
-}
-}
-}
-
 /*
 - LINK GROUP XNR
 https://chat.whatsapp.com/I24OwNUuBzk6KRDeNDF62e
