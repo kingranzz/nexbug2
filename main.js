@@ -290,22 +290,6 @@ const loadUserActivity = () => {
     }
 };
 
-const fkontak = {
-			key: {
-				remoteJid: '0@s.whatsapp.net',
-				participant: '0@s.whatsapp.net',
-				fromMe: false,
-				id: 'Naze'
-			},
-			message: {
-				
-				Message: {
-					displayName: `ranz`,
-					vcard: `BEGIN:VCARD\nVERSION:3.0\nN:XL;${m.pushName || author},;;;\nFN:${m.pushName || author}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
-					sendEphemeral: true
-				}
-			}
-		}
 // --- Middleware untuk Mengecek Mode Maintenance ---
 const checkMaintenance = async (ctx, next) => {
     let userId, userNickname;
