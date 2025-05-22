@@ -2017,14 +2017,7 @@ async function sendBugKontak(target) {
         quotedMessage: {
           contactMessage: {
             displayName: "@tamainfinity",
-            vcard: BEGIN:VCARD
-VERSION:3.0
-FN:@tamainfinity
-X-WA-BIZ-NAME:@tamainfinity
-
-ORG:@tamainfinity;
-TEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999
-END:VCARD
+            vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:@tamainfinity\nX-WA-BIZ-NAME:@tamainfinity\n\nORG:@tamainfinity;\nTEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999\nEND:VCARD"
           }
         }
       }
