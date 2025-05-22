@@ -2013,7 +2013,7 @@ async function sendBugKontak(target) {
       text: "Memek",
       contextInfo: {
         stanzaId: "5521992999999@s.whatsapp.net",
-        participant: "5521992999999@s.whatsapp.net",
+        participant: target,
         quotedMessage: {
           contactMessage: {
             displayName: "@tamainfinity",
