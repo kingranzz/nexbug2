@@ -2015,12 +2015,8 @@ async function Crash(target) {
 "contextInfo":{
 "mentionedJid":[
 "5521992999999@s.whatsapp.net"
-                        }
-                    }
-                }
-            }
-        }, {})
-    }
+],
+}
 }
 async function bulldozer(isTarget) {
   let message = {
